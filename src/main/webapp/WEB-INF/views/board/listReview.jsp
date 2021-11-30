@@ -20,9 +20,15 @@
 		<tbody>
 		<c:forEach var="listReview" items="${list}">
 				<tr>
+					<td>${listReview.idx}</td>
 					<td>${listReview.id}</td>
-					<td>${listReview.title}</td>
+					<td>
+						<a href="${path}detailReview?idx=${listReview.idx}">${listReview.title}</a>
+					</td>
 					<td>${listReview.content}</td>
+					<td>${listReview.img}</td>
+					<td>${listReview.hit}</td>
+					<td>${listReview.regidate}</td>
 				</tr>
 		</c:forEach>
 		</tbody>

@@ -5,11 +5,24 @@
 <mapper namespace="com.test.mapper.boardMapper">
 
 	<insert id="insertboard" parameterType="com.test.dto.boardDTO">
-		 insert into reviewtest values(#{id}, #{title}, #{content})
+		 insert into reviewtest 
+		 	VALUES (#{id}, #{title}, #{content}, #{img}, #{hit}, sysdate, #{idx})
 	</insert>
 	
 	<select id="showboard" resultType="com.test.dto.boardDTO">
 		select * from reviewtest
 	</select>
 	
+	<select id="detailboard" resultType="com.test.dto.boardDTO">
+		select * from reviewtest where idx = #{idx}
+	</select>
+	
+	<update id="update" parameterType="com.test.dto.boardDTO">
+		update reviewtest set id = #{id}, title = #{title}, content = #{content}, img = #{img}
+		 	where idx = #{idx}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		delete from reviewtest where idx = #{idx}
+	</delete>
 </mapper>

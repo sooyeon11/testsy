@@ -10,7 +10,7 @@
 		<table>
 			<tr>
 				<td>id</td>
-				<td>${1}</td>
+				<td>${ok}</td>
 			</tr>
 			<tr>
 				<td>title</td>

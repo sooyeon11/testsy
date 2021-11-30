@@ -22,6 +22,20 @@ public class boardDAOImpl implements boardDAO{
 	public List<boardDTO> list() { 
 		return sqlSession.selectList("com.test.mapper.boardMapper.showboard"); 
 	}
-	 
 
+	@Override
+	public boardDTO detailboard(int idx) {
+		return sqlSession.selectOne("com.test.mapper.boardMapper.detailboard",idx);
+	}
+
+	@Override
+	public int update(boardDTO dto) {
+		return sqlSession.update("com.test.mapper.boardMapper.update", dto);
+	}
+
+	@Override
+	public int delete(int idx) {
+		return sqlSession.delete("com.test.mapper.boardMapper.delete", idx);
+	}
+	 
 }
