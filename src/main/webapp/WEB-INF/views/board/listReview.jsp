@@ -11,9 +11,13 @@
 	<table>
 		<thead>
 			<tr>
+				<td>no</td>
 				<td>id</td>
 				<td>title</td>
 				<td>content</td>
+				<td>img</td>
+				<td>hit</td>
+				<td>regidate</td>
 			</tr>
 		</thead>
 

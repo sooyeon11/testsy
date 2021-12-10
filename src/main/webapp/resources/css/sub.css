@@ -458,8 +458,8 @@
 /**/
 
 .s21_tour_list_photo{width:100%;}
-.s21_tour_list_photo dt{float:left;width:65.5%}
-.s21_tour_list_photo dd{float:right;width:33%;margin-bottom:5px;}
+.s21_tour_list_photo dt{float:left;width:100%}
+/*.s21_tour_list_photo dd{float:right;width:33%;margin-bottom:5px;}*/
 .s21_tour_list_photo img{width:100%}
 .s21_tour_list_photo dt img{height:211px;}
 .s21_tour_list_photo dd img{height:103px;}

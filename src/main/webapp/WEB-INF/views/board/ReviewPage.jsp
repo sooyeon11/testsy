@@ -17,7 +17,8 @@
     <link rel="stylesheet" href="./resources/css/layout.css">
     <link rel="stylesheet" href="./resources/css/shot.css">
     <link rel="stylesheet" href="./resources/css/swiper-bundle.min.css">
-
+    
+    <link rel="icon" type="image/png" href="http://example.com/myicon.png"> 
 
     <script src="./resources/js/jquery.js"></script>
     <script src="./resources/js/swiper-bundle.min.js"></script>
@@ -87,7 +88,7 @@
                 </div>
                 <div class="s21_top_tbox_right">
                     <div class="s21_top_cal" onclick="Store.clear()">
-<a onclick="go_link('?m1Code=album&amp;m2Code=album&amp;mode=in')">
+<a onclick="go_link('${path}wirteReview')">
     <div class="s21_top_right_box">
         <p><img src="http://appdata.hungryapp.co.kr/images/hatdog/img/pc_img/album/top_ico1.png" alt=""></p>
         <dl>
@@ -108,10 +109,8 @@
 </div>
 
 <script>
-function go_link(link){
+function go_link(link){ location.href=link; } 
 
-location.href=link;
-}
 </script>					</div>
             </div>
         </div>
@@ -125,7 +124,7 @@ location.href=link;
             <!-- 순 -->
             <div class="s21_tour_sun">
                 <!-- 검색란 체크시 출력 -->
-                <h3 class="span_h3"><span class="span_h3_ttl">공개앨범</span> <span class="span_h3_st ab_total">260</span> 개의 앨범이 있습니다.</h3>
+                <h3 class="span_h3"><span class="span_h3_ttl">공개앨범</span></h3>
             </div>
             <!--// 순 -->
 
@@ -137,34 +136,35 @@ location.href=link;
             </form>
             <div class="s21_tour_list_box">
             
-            <c:forEach var="listReview" items="${list}">
+            <c:forEach var="ReviewPage" items="${list}">
             
-            <a onclick="Store.set('ab_m_scroll',document.documentElement.scrollTop)" href="?m1Code=album&amp;m2Code=album_pic&amp;bf_m2Code=&amp;album_idx=943">
+            <a onclick="Store.set('ab_m_scroll',document.documentElement.scrollTop)" href="${path}detailReviewPage?mb_id=${ReviewPage.mb_id}">
                             <div class="s21_tour_list_conts pr ">
                                 <dl class="s21_tour_list_photo">
                                     <dt>
-                                    	<img src="http://appdata.hungryapp.co.kr/images/hatdog/album/202111/M16359911139427221.jpg/hungryapp/resize/500" alt="">
+                                    	<img src="resources/${ReviewPage.mb_img}" alt="">
                                    		<%-- ${listReview.img} 첫번째 이미지--%>
                                     </dt>
-                                    <dd>
-                                    	<img src="http://appdata.hungryapp.co.kr/images/hatdog/album/202111/M16359911476036421.jpg/hungryapp/resize/200" alt="">
+                                   <!--  <dd>
+                                    	<img src="resources/${ReviewPage.mb_img}" alt="">
                                    		<%-- ${listReview.img} 두번째 이미지--%>
                                     </dd>
                                     <dd>
-                                    	<img src="http://appdata.hungryapp.co.kr/images/hatdog/album/pic/202111/M16359921223203821.jpg/hungryapp/resize/200" alt="">
+                                    	<img src="resources/${ReviewPage.mb_img}" alt="">
                                     	<%-- ${listReview.img} 세번째 이미지--%>
-                                    </dd>
+                                    </dd> -->
                                 </dl>
-                                <p class="s21_best_num pa">+ 16</p>
                                 <div class="s21_tour_list_tbox">
-                                    <h4 class="s21_best_tip">${listReview.title}</h4>
+                                    <h4 class="s21_best_tip">
+                                    	<a href="${path}detailReviewPage?mb_id=${ReviewPage.mb_id}">${ReviewPage.mb_title}</a>
+                                    </h4>
                                     <div class="s21_album_desc" onclick="">
                                       
                                        <div class="s21_album_desc_bx pr">
                                             <p><img src="http://appdata.hungryapp.co.kr/images/hatdog/img/common/login_logoutimg.jpg/hungryapp/resize/200" alt=""></p>
                                             <dl>
-                                                <dt>${listReview.title}</dt>
-                                                <dd>${listReview.regidate}</dd>
+                                                <dt>${ReviewPage.mb_title}</dt>
+                                                <dd>${ReviewPage.mb_regidate}</dd>
                                             </dl>
                                         </div>
 
@@ -178,12 +178,37 @@ location.href=link;
 
             <!-- paging s -->
             <div class="s21_page">
-                <div class="s21_pagination jquery-paging" id="PageNav"><a class=" active">1</a><a class="">2</a><a class="">3</a><a class="">4</a><a class="">5</a><a class="PageNavNext">→</a><a class="">13</a><a class="">»</a></div>
-            </div>
+                <div class="s21_pagination jquery-paging" id="PageNav">
+						<div>
+							<c:if test="${prev}">
+								<span> <a href="ReviewPage?num=${startPageNum - 1}">이전</a>
+									
+								</span>
+							</c:if>
+
+							<c:forEach begin="${startPageNum}" end="${endPageNum}" var="num">
+								<span> <c:if test="${select != num}">
+										<a href="ReviewPage?num=${num}">${num}</a>
+									</c:if> <c:if test="${select == num}">
+										<a><b>${num}</b></a>
+									</c:if>
+								</span>
+							</c:forEach>
+
+							<c:if test="${next}">
+								<span> <a href="ReviewPage?num=${endPageNum + 1}">다음</a>
+									
+								</span>
+							</c:if>
+						</div>
+
+					</div>
+            </div> 
+	</div>
             <!--// paging e -->
-        </div>
+</div>
         <!--// 하단 리스트 -->
-    </div>
+</div>
 
 
 

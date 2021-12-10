@@ -16,8 +16,7 @@
 		
 		
 		<a href="/ex00/listReview">게시물 목록</a>
-		<a href="/ex00/ReviewPage">위드독 목록</a>
-		<a href="/ex00/detailReviewPage">상세</a>
-		<a href="/ex00/updateView">update</a>
+		<a href="/ex00/ReviewPage?num=1">위드독 목록</a>
+		<a href="/ex00/writeReview">글작성</a>
 </body>
 </html>

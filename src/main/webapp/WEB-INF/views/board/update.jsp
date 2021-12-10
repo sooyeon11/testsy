@@ -9,18 +9,18 @@
 </head>
 <body>
 	<h2>update page</h2>
-	<form name = "update" method = "POST" action = "${path}/board/update?idx=${detail.idx}"	>
-		<div>게시번호 : ${detail.idx}</div>
-		<div>닉네임 : ${detail.id}</div>
-		<div>조회수 : ${detail.hit}</div>
-		<div>날짜 : ${detail.regidate}</div>
-		<div>제목 : ${detail.title}</div>
+	<form name = "update" method = "POST" action ="/ex00/updatePro">
+		<div>게시번호 : ${detail.mb_id}<input type="hidden" name="mb_id" value="${detail.mb_id}"/></div>
+		<div>닉네임 : ${detail.m_id}<input type="hidden" name="m_id" value="${detail.m_id}"/></div>
+		<div>조회수 : ${detail.mb_hit}<input type="hidden" name="mb_hit" value="${detail.mb_hit}"/></div>
+		<div>날짜 : ${detail.mb_regidate}</div>
+		<div>제목 : ${detail.mb_title}</div>
 		<div>
-			<input name = "title" value="${detail.title}" type="text" />
+			<input name = "mb_title" value="${detail.mb_title}" type="text" />
 		</div>
-		<div>내용 : ${detail.content}</div>
+		<div>내용 : ${detail.mb_content}</div>
 		<div>
-			<input name = "content" value="${detail.content}" type="text" />
+			<input name = "mb_content" value="${detail.mb_content}" type="text" />
 		</div>
 		
 		<div>

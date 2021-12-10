@@ -1,76 +1,91 @@
 package com.test.dto;
 
-import java.util.Date;
-
 public class boardDTO {
 	
-	private int idx;
-	private String id;
-	private String title;
-	private String content;
-	private String img;
-	private int hit;
-	private String regidate;
+	private int mb_id;
+	private String mb_title;
+	private String mb_content;
+	private String mb_img;
+	private int mb_hit;
+	private String mb_regidate;
+	private String m_id;
+	private int h_id;
 	
+
 	public boardDTO() {
 	}
-	
-	public boardDTO(int idx, String id, String title, String content, String img, int hit, String regidate) {
-		this.idx = idx;
-		this.id = id;
-		this.title = title;
-		this.content = content;
-		this.img = img;
-		this.hit = hit;
-		this.regidate = regidate;
+
+	public int getMb_id() {
+		return mb_id;
 	}
-	public int getIdx() {
-		return idx;
+
+	public void setMb_id(int mb_id) {
+		this.mb_id = mb_id;
 	}
-	public void setIdx(int idx) {
-		this.idx = idx;
+
+	public String getMb_title() {
+		return mb_title;
 	}
-	public String getId() {
-		return id;
+
+	public void setMb_title(String mb_title) {
+		this.mb_title = mb_title;
 	}
-	public void setId(String id) {
-		this.id = id;
+
+	public String getMb_content() {
+		return mb_content;
 	}
-	public String getTitle() {
-		return title;
+
+	public void setMb_content(String mb_content) {
+		this.mb_content = mb_content;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+
+	public String getMb_img() {
+		return mb_img;
 	}
-	public String getContent() {
-		return content;
+
+	public void setMb_img(String mb_img) {
+		this.mb_img = mb_img;
 	}
-	public void setContent(String content) {
-		this.content = content;
+
+	public int getMb_hit() {
+		return mb_hit;
 	}
-	public String getImg() {
-		return img;
+
+	public void setMb_hit(int mb_hit) {
+		this.mb_hit = mb_hit;
 	}
-	public void setImg(String img) {
-		this.img = img;
+
+	public String getMb_regidate() {
+		return mb_regidate;
 	}
-	public int getHit() {
-		return hit;
+
+	public void setMb_regidate(String mb_regidate) {
+		this.mb_regidate = mb_regidate;
 	}
-	public void setHit(int hit) {
-		this.hit = hit;
+
+	public String getM_id() {
+		return m_id;
 	}
-	public String getRegidate() {
-		return regidate;
+
+	public void setM_id(String m_id) {
+		this.m_id = m_id;
 	}
-	public void setRegidate(String regidate) {
-		this.regidate = regidate;
+
+	public int getH_id() {
+		return h_id;
 	}
+
+	public void setH_id(int h_id) {
+		this.h_id = h_id;
+	}
+
 	@Override
 	public String toString() {
-		return "boardDTO [idx=" + idx + ", id=" + id + ", title=" + title + ", content=" + content + ", img=" + img
-				+ ", hit=" + hit + ", regidate=" + regidate + "]";
+		return "boardDTO [mb_id=" + mb_id + ", mb_title=" + mb_title + ", mb_content=" + mb_content + ", mb_img="
+				+ mb_img + ", mb_hit=" + mb_hit + ", mb_regidate=" + mb_regidate + ", m_id=" + m_id + ", h_id=" + h_id
+				+ "]";
 	}
+	
 	
 	
 }
